@@ -1,5 +1,6 @@
 class LeaderBoardController < ApplicationController
   before_action :set_user
+  before_action :user_color_data, only: [:index]
 
   def index
   end
@@ -14,5 +15,9 @@ class LeaderBoardController < ApplicationController
 
   def set_user
   	@user = User.set_user(request.remote_ip)
+  end
+
+  def user_color_data
+  	@user_color ||= UserColor.includes(:user)
   end
 end
