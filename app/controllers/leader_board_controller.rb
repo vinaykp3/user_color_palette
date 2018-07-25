@@ -4,6 +4,12 @@ class LeaderBoardController < ApplicationController
   def index
   end
 
+  def update_user_grid_color
+  	params.permit!
+  	UserColor.update_user_colors(@user, params.to_h)
+    respond_to :js
+  end
+
   private
 
   def set_user

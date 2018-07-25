@@ -30,7 +30,16 @@ function update_grid_color(object) {
 		alert('Please select color');
 	}
 	else{
-		$(object).css("background-color",color_value);	
+		$(object).css("background-color",color_value);
+		$.ajax({
+      type: "POST",
+      beforeSend: function(xhr) {
+                    xhr.setRequestHeader('X-CSRF-Token', 
+                    $('meta[name="csrf-token"]').attr('content'))
+                  },
+      url: "/leader_board/update_user_grid_color",
+      data: { grid_postion: object.id, color_code: color_value }
+    });
 	}
-	
+
 }
