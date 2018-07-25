@@ -23,3 +23,14 @@ $(document).ready(function(){
     inline: true
   });
 })
+
+function update_grid_color(object) {
+	color_value = $(".colors").val();
+	if(color_value == ''){
+		alert('Please select color');
+	}
+	else{
+		$(object).css("background-color",color_value);	
+	}
+	
+}
