@@ -1,6 +1,6 @@
 class LeaderBoardController < ApplicationController
   before_action :set_user
-  before_action :user_color_data, only: [:index]
+  before_action :user_color_data, only: [:index, :frequent_grid_updatation]
 
   def index
   end
@@ -9,6 +9,10 @@ class LeaderBoardController < ApplicationController
   	params.permit!
   	UserColor.update_user_colors(@user, params.to_h)
     respond_to :js
+  end
+
+  def frequent_grid_updatation
+  	respond_to :js
   end
 
   private

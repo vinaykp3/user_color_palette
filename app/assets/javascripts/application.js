@@ -43,3 +43,13 @@ function update_grid_color(object) {
 	}
 
 }
+
+function refresh_grid(){
+	$.ajax({
+    type: "get",
+    url: "/leader_board/frequent_grid_updatation"
+  });
+}
+
+window.setInterval(refresh_grid,15000);
+
