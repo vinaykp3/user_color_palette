@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  username:
+  password:
+
+development:
+  <<: *default
+  database: draw_colors_development
+
+test:
+  <<: *default
+  database: draw_colors_test
+
+production:
+  <<: *default
+  database: draw_colors_prod
