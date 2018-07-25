@@ -37,7 +37,7 @@ function update_grid_color(object) {
                     xhr.setRequestHeader('X-CSRF-Token', 
                     $('meta[name="csrf-token"]').attr('content'))
                   },
-      url: "/leader_board/update_user_grid_color",
+      url: "/user_color_board/update_user_grid_color",
       data: { grid_postion: object.id, color_code: color_value }
     });
 	}
@@ -47,7 +47,7 @@ function update_grid_color(object) {
 function refresh_grid(){
 	$.ajax({
     type: "get",
-    url: "/leader_board/frequent_grid_updatation"
+    url: "/user_color_board/frequent_grid_updatation"
   });
 }
 

@@ -1,4 +1,4 @@
-class LeaderBoardController < ApplicationController
+class UserColorBoardController < ApplicationController
   before_action :set_user
   before_action :user_color_data, only: [:index, :frequent_grid_updatation]
 
@@ -13,6 +13,10 @@ class LeaderBoardController < ApplicationController
 
   def frequent_grid_updatation
   	respond_to :js
+  end
+
+  def leader_board
+  	@users_data = User.users_colors_data
   end
 
   private

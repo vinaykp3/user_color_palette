@@ -8,4 +8,13 @@ class User < ApplicationRecord
   	user_name = "RandomUser_#{SecureRandom.hex(10)}"
   	User.create(name: user_name, uniq_identifier: ipaddress)
 	end
+
+	def self.users_colors_data
+		User.joins(:user_colors).select("users.*, count(user_colors.id) most_color").group("users.id")
+	end
+
+	def user_favourite_color
+   self.user_colors.group(:color_code).count.sort_by {|key,value| value}.last[0]
+  end
+
 end
