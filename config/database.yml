@@ -8,12 +8,12 @@ default: &default
 
 development:
   <<: *default
-  database: draw_colors_development
+  database: user_color_palette_development
 
 test:
   <<: *default
-  database: draw_colors_test
+  database: user_color_palette_test
 
 production:
   <<: *default
-  database: draw_colors_prod
+  database: user_color_palette_prod
