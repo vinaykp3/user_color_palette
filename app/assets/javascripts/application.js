@@ -13,4 +13,13 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery
+//= require jquery.minicolors
 //= require_tree .
+
+$(document).ready(function(){
+  $(".colors").minicolors({
+    position: 'top left',
+    inline: true
+  });
+})
