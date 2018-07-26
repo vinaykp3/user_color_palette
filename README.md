@@ -10,10 +10,14 @@ Prerequisites:
 Steps to be followed to run the application
 
 * Clone the project from the Github
-* Inside the project directory Execute following commands
+* Inside the project directory Execute following commands for first time
   * ```gem install bundler```
   * Run ```bundle install```
   * Database creation ```rake db:create```
   * Run migrations ```rake db:migrate```
+
+* Run the application
   * Start server ```rails s```
-  * Run the test cases ```rspec spec```
+
+* Run the test cases
+  *  ```rspec spec```
