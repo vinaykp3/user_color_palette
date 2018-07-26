@@ -33,3 +33,29 @@
 	height:30px;
 	border: 1px solid;
 }
+
+.active{
+	font-weight: bold;
+	color: white;
+}
+
+.header{
+	height: 100px;
+	background-color: #00b6ee;
+}
+
+.user{
+	margin-top: 60px;
+	position: absolute;
+	font-size: 15pt;
+}
+
+.navigation{
+	margin-top: 60px;
+	margin-left: 600px;
+	position: absolute;
+}
+
+
+
+

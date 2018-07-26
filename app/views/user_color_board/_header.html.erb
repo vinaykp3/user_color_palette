@@ -1,0 +1,9 @@
+<div class='header'>
+	<div class='user'>
+		<b>Welcome <%= @user.name%></b>
+	</div>
+
+	<div class='navigation'>
+		<%= link_to "Leaderboard",user_color_board_leader_board_path, :class=>"#{leader_board}"%>
+	</div>
+</div>
