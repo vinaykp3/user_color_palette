@@ -24,7 +24,8 @@ RSpec.describe UserColor, type: :model do
 	  	one = FactoryBot.create(:user_color, user: user)
 	  	two = FactoryBot.create(:user_color, user: user2)
 	  	three = FactoryBot.create(:user_color, user: user3)
-	  	data = UserColor.get_existing_color_code_data(1,1, UserColor.all)
+      colors = UserColor.includes(:user).group_by{|data| [data.row, data.col]}
+	  	data = UserColor.get_existing_color_code_data(1,1, colors)
 	  	expect(data[0]).to eq(three.color_code)
 	  	expect(data[1]).to eq("#{user3.name} #{three.time_format}")
   	end

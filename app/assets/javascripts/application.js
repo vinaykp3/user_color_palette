@@ -38,7 +38,7 @@ function update_grid_color(object) {
                     $('meta[name="csrf-token"]').attr('content'))
                   },
       url: "/user_color_board/update_user_grid_color",
-      data: { grid_postion: object.id, color_code: color_value }
+      data: { user_color: {grid_postion: object.id, color_code: color_value} }
     });
 	}
 

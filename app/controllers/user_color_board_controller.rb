@@ -6,8 +6,7 @@ class UserColorBoardController < ApplicationController
   end
 
   def update_user_grid_color
-  	params.permit!
-  	UserColor.update_user_colors(@user, params.to_h)
+  	UserColor.update_user_colors(@user, user_params)
     respond_to :js
   end
 
@@ -26,6 +25,10 @@ class UserColorBoardController < ApplicationController
   end
 
   def user_color_data
-  	@user_color ||= UserColor.includes(:user)
+  	@user_color ||= UserColor.includes(:user).group_by{|data| [data.row, data.col]}
+  end
+
+  def user_params
+    params.require(:user_color).permit(:grid_postion, :color_code)
   end
 end
